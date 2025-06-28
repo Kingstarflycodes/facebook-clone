@@ -1,0 +1,156 @@
+body {
+  background: #f0f2f5;
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.signup-root {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-container {
+  width: 432px;
+  margin: 40px 0;
+}
+
+.signup-form {
+  background: #fff;
+  padding: 24px 16px 16px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.signup-form h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0 0 4px 0;
+  color: #1c1e21;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #606770;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.name-fields {
+  display: flex;
+  gap: 8px;
+}
+
+.name-fields input {
+  flex: 1;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="password"],
+.signup-form input[type="date"] {
+  padding: 12px;
+  border: 1px solid #ccd0d5;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-bottom: 0;
+  outline: none;
+}
+
+.signup-form input[type="text"]:focus,
+.signup-form input[type="password"]:focus,
+.signup-form input[type="date"]:focus {
+  border-color: #1877f2;
+  box-shadow: 0 0 0 2px #e7f3ff;
+}
+
+.birthday-label,
+.gender-label {
+  font-size: 14px;
+  color: #606770;
+  margin-top: 8px;
+  margin-bottom: 2px;
+  font-weight: bold;
+}
+
+.gender {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.gender label {
+  font-size: 15px;
+  color: #1c1e21;
+  font-weight: normal;
+}
+
+.terms {
+  font-size: 11px;
+  color: #777;
+  margin: 8px 0 0 0;
+  text-align: center;
+}
+
+.terms a {
+  color: #1877f2;
+  text-decoration: none;
+}
+
+.terms a:hover {
+  text-decoration: underline;
+}
+
+.signup-button {
+  background: #42b72a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 0;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+
+.signup-button:hover {
+  background: #36a420;
+}
+
+.already-account {
+  display: block;
+  text-align: center;
+  margin-top: 16px;
+  color: #1877f2;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.already-account:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .signup-container {
+    width: 100%;
+    margin: 0;
+    padding: 0 8px;
+  }
+  .signup-form {
+    padding: 16px 4px 12px 4px;
+    width: 100%;
+    min-width: 0;
+  }
+  .name-fields {
+    flex-direction: column;
+    gap: 0;
+  }
+}

